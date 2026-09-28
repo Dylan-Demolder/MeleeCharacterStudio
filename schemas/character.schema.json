@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "display_name",
+    "version",
+    "author",
+    "license",
+    "target_game_version",
+    "compatibility"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "target_game_version": {
+      "const": "GALE01-1.02"
+    },
+    "compatibility": {
+      "enum": [
+        "visual-only",
+        "offline-gameplay",
+        "training-compatible",
+        "unknown"
+      ]
+    },
+    "base_fighter": {
+      "type": "string"
+    },
+    "attributes": {
+      "type": "object"
+    }
+  }
+}

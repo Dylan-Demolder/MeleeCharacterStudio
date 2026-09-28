@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "game_version",
+    "library_version",
+    "source",
+    "moves"
+  ],
+  "properties": {
+    "game_version": {
+      "const": "GALE01-1.02"
+    },
+    "library_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "moves": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "display_name",
+          "slot",
+          "startup_frames",
+          "active_frames",
+          "recovery_frames"
+        ],
+        "properties": {
+          "display_name": {
+            "type": "string"
+          },
+          "slot": {
+            "type": "string"
+          },
+          "startup_frames": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "active_frames": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "recovery_frames": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

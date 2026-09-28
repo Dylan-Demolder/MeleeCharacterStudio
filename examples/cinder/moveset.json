@@ -1,0 +1,109 @@
+{
+  "base_fighter": "ganondorf",
+  "moves": [
+    {
+      "name": "Inferno Punch",
+      "slot": "special_neutral",
+      "description": "A devastating flaming punch.",
+      "actions": [
+        {
+          "action": "SpecialN*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "fire"
+          }
+        },
+        {
+          "action": "SpecialAirN*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "fire"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Magma Rush",
+      "slot": "special_side",
+      "description": "Lunge and seize a foe in molten claws.",
+      "actions": [
+        {
+          "action": "SpecialS*",
+          "tuning": {
+            "element": "fire"
+          }
+        },
+        {
+          "action": "SpecialAirS*",
+          "tuning": {
+            "element": "fire"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Eruption",
+      "slot": "special_up",
+      "description": "A rising grab that erupts in fire.",
+      "actions": [
+        {
+          "action": "SpecialHi*",
+          "tuning": {
+            "element": "fire"
+          }
+        },
+        {
+          "action": "SpecialAirHi*",
+          "tuning": {
+            "element": "fire"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meteor Stomp",
+      "slot": "special_down",
+      "description": "A blazing flying kick.",
+      "actions": [
+        {
+          "action": "SpecialLw*",
+          "tuning": {
+            "element": "fire"
+          }
+        },
+        {
+          "action": "SpecialAirLw*",
+          "tuning": {
+            "element": "fire"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Hellfire",
+      "slot": "smash_forward",
+      "description": "Flaming side kick.",
+      "actions": [
+        {
+          "action": "AttackS4*",
+          "tuning": {
+            "element": "fire"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Scorch",
+      "slot": "attack_air_forward",
+      "description": "A burning overhead chop.",
+      "actions": [
+        {
+          "action": "AttackAirF",
+          "tuning": {
+            "element": "fire"
+          }
+        }
+      ]
+    }
+  ]
+}

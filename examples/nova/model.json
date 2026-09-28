@@ -1,0 +1,48 @@
+{
+  "name": "Sir Nova",
+  "notes": "An original star knight on Marth's frame: silver plate over a navy suit, star emblem breastplate, a star crest on the helm, a long cape and a pale starlight blade in the right hand.",
+  "palette": {"steel": "#c7ccd6", "steel_dark": "#8f97a6", "suit": "#1d2a5c", "suit_dark": "#141d42", "cape": "#2b3fa6", "cape_in": "#e0b33a", "gold": "#e8c04a", "skin": "#f0c9a0", "hair": "#f3e6c4", "eye": "#2a3a8a", "blade": "#cfeaff", "blade_edge": "#8fcfff", "grip": "#3a2a55"},
+  "decals": {
+    "star": {"rows": ["NNNNNNNNNNNNNNNN", "NNNNNNNGGNNNNNNN", "NNNNNNNGGNNNNNNN", "NNNNNNGGGGNNNNNN", "NNNNNNGGGGNNNNNN", "NGGGGGGGGGGGGGGN", "NNGGGGGGGGGGGGNN", "NNNGGGGGGGGGGNNN", "NNNNGGGGGGGGNNNN", "NNNNGGGGGGGGNNNN", "NNNGGGGNNGGGGNNN", "NNNGGGNNNNGGGNNN", "NNGGGNNNNNNGGGNN", "NNGGNNNNNNNNGGNN", "NNNNNNNNNNNNNNNN", "NNNNNNNNNNNNNNNN"],
+             "colors": {"N": "suit", "G": "gold"}}
+  },
+  "landmarks": {
+    "pelvis": [0, 11, 0], "chest": [0, 14.4, 0], "neck": [0, 18.2, 0.2], "head": [0, 19.7, 0.4],
+    "r_shoulder": [-2.6, 17.2, 0], "r_elbow": [-6.0, 17.1, 0], "r_wrist": [-9.2, 17.0, 0], "r_hand": [-10.2, 17.0, 0.1],
+    "r_hip": [-1.25, 10.5, 0], "r_knee": [-1.45, 5.7, 0.3], "r_ankle": [-1.55, 1.1, 0], "r_toe": [-1.55, 0.3, 2.0]
+  },
+  "parts": [
+    {"shape": "capsule", "from": [0, 10.3, 0], "to": [0, 12.4, 0], "radius": [1.75, 1.6], "color": "suit", "segment": "pelvis", "sides": 12},
+    {"shape": "cylinder", "from": [0, 12.0, 0], "to": [0, 8.2, 0], "radius": [1.9, 2.55], "color": "suit_dark", "segment": "pelvis", "sides": 10, "caps": true},
+    {"shape": "cylinder", "from": [0, 12.1, 0], "to": [0, 11.4, 0], "radius": [1.95, 2.05], "color": "gold", "segment": "pelvis", "sides": 10},
+    {"shape": "capsule", "from": [0, 12.6, 0], "to": [0, 16.6, 0.1], "radius": [1.7, 2.15], "color": "steel", "segment": "chest", "sides": 12},
+    {"shape": "box", "center": [0, 15.6, 2.0], "size": [2.4, 2.4, 0.3], "rotate": [-6, 0, 0], "color": "suit", "segment": "chest", "faces": {"front": "star"}},
+    {"shape": "capsule", "from": [0, 17.6, 0.1], "to": [0, 18.9, 0.3], "radius": [0.7, 0.62], "color": "suit", "segment": "head"},
+    {"shape": "sphere", "center": [0, 19.75, 0.55], "radius": [1.15, 1.3, 1.2], "color": "skin", "segment": "head"},
+    {"shape": "sphere", "center": [0, 20.35, 0.15], "radius": [1.36, 1.2, 1.42], "color": "steel", "segment": "head"},
+    {"shape": "box", "center": [0, 19.25, -0.55], "size": [2.3, 1.6, 1.0], "color": "steel_dark", "segment": "head"},
+    {"shape": "sphere", "center": [-0.42, 19.75, 1.62], "radius": [0.17, 0.2, 0.08], "color": "eye", "segment": "head", "mirror": true},
+    {"shape": "extrude", "origin": [0, 21.05, 1.05], "u": [1, 0, 0], "v": [0, 1, 0], "thickness": 0.18, "color": "gold", "segment": "head",
+     "points": [[0, 1.0], [0.24, 0.33], [0.95, 0.31], [0.38, -0.12], [0.59, -0.81], [0, -0.4], [-0.59, -0.81], [-0.38, -0.12], [-0.95, 0.31], [-0.24, 0.33]]},
+    {"shape": "cone", "from": [0, 21.3, -0.3], "to": [0, 20.1, -3.2], "radius": 0.45, "sides": 6, "color": "hair", "segment": "head"},
+    {"shape": "extrude", "origin": [0, 17.7, -2.0], "u": [1, 0, 0], "v": [0, 1, 0], "thickness": 0.22, "color": "cape", "segment": "chest",
+     "points": [[-2.4, 0], [2.4, 0], [3.3, -9.2], [1.4, -8.6], [0, -9.6], [-1.4, -8.6], [-3.3, -9.2]]},
+    {"shape": "extrude", "origin": [0, 17.7, -1.8], "u": [1, 0, 0], "v": [0, 1, 0], "thickness": 0.1, "color": "cape_in", "segment": "chest",
+     "points": [[-2.2, -0.2], [2.2, -0.2], [3.1, -9.0], [1.4, -8.4], [0, -9.4], [-1.4, -8.4], [-3.1, -9.0]]},
+    {"shape": "sphere", "center": {"at": "r_shoulder", "offset": [0, 0.35, 0]}, "radius": [1.35, 1.0, 1.25], "color": "steel", "segment": "r_upper", "mirror": true},
+    {"shape": "capsule", "from": "r_shoulder", "to": "r_elbow", "radius": [0.7, 0.58], "color": "suit", "segment": "r_upper", "mirror": true},
+    {"shape": "capsule", "from": "r_elbow", "to": "r_wrist", "radius": [0.58, 0.5], "color": "suit", "segment": "r_fore", "mirror": true},
+    {"shape": "cylinder", "from": {"lerp": ["r_elbow", "r_wrist", 0.35]}, "to": {"at": "r_wrist", "offset": [0.1, 0, 0]}, "radius": [0.64, 0.74], "color": "steel", "segment": "r_fore", "sides": 8, "mirror": true},
+    {"shape": "box", "center": {"lerp": ["r_wrist", "r_hand", 0.55]}, "size": [1.2, 0.95, 1.05], "color": "steel_dark", "segment": "r_hand", "mirror": true},
+    {"shape": "capsule", "from": "r_hip", "to": "r_knee", "radius": [0.95, 0.8], "color": "suit", "segment": "r_thigh", "mirror": true},
+    {"shape": "capsule", "from": "r_knee", "to": "r_ankle", "radius": [0.78, 0.6], "color": "suit", "segment": "r_shin", "mirror": true},
+    {"shape": "cylinder", "from": {"lerp": ["r_knee", "r_ankle", 0.05]}, "to": {"at": "r_ankle", "offset": [0, 0.2, 0]}, "radius": [0.88, 0.7], "color": "steel", "segment": "r_shin", "sides": 8, "mirror": true},
+    {"shape": "box", "from": {"at": "r_ankle", "offset": [0, -0.6, -0.5]}, "to": {"at": "r_toe", "offset": [0, -0.05, 0.1]}, "size": [1.2, 1.0], "color": "steel_dark", "segment": "r_foot", "mirror": true},
+    {"shape": "box", "from": [-9.9, 17.0, -0.9], "to": [-9.9, 17.0, 1.6], "size": [0.45, 0.45], "color": "grip", "segment": "r_hand"},
+    {"shape": "box", "center": [-9.9, 17.0, 1.75], "size": [0.45, 2.4, 0.45], "color": "gold", "segment": "r_hand"},
+    {"shape": "extrude", "origin": [-9.9, 17.0, 0], "u": [0, 0, 1], "v": [0, 1, 0], "thickness": 0.22, "color": "blade", "segment": "r_hand",
+     "points": [[2.0, -0.42], [10.2, -0.3], [11.2, 0], [10.2, 0.3], [2.0, 0.42]]},
+    {"shape": "extrude", "origin": [-9.9, 17.0, 0], "u": [0, 0, 1], "v": [0, 1, 0], "thickness": 0.28, "color": "blade_edge", "segment": "r_hand",
+     "points": [[2.0, -0.1], [9.8, -0.06], [9.8, 0.06], [2.0, 0.1]]}
+  ]
+}

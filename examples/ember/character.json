@@ -1,0 +1,20 @@
+{
+  "id": "ember",
+  "display_name": "Ember",
+  "version": "1.0.0",
+  "author": "Dylan Demolder",
+  "license": "CC0-1.0",
+  "target_game_version": "GALE01-1.02",
+  "compatibility": "offline-gameplay",
+  "attributes": {
+    "walk_speed": 1.2,
+    "dash_speed": 1.6,
+    "run_speed": 2.3,
+    "jump_velocity": 3.4,
+    "gravity": 0.09,
+    "fall_speed": 1.9,
+    "air_speed": 1.15,
+    "weight": 118.0,
+    "size": 1.55
+  }
+}

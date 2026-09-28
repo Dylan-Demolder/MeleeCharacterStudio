@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "base_fighter",
+    "moves"
+  ],
+  "properties": {
+    "base_fighter": {
+      "type": "string"
+    },
+    "moves": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "slot"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "slot": {
+            "type": "string"
+          },
+          "reference": {
+            "type": "string"
+          },
+          "transitions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

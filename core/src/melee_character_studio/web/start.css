@@ -1,0 +1,32 @@
+/* Character Studio start screen: layout on top of Pascal UI (pascal-ui.css). */
+.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--pp-space-4); }
+.project { padding: 0; overflow: hidden; gap: 0; }
+.project .pic { aspect-ratio: 4 / 3; display: grid; place-items: center; background:
+  radial-gradient(circle at 50% 35%, var(--pp-raised), var(--pp-sunken)); border-bottom: 1px solid var(--pp-line); }
+.project .pic img { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+.project .pic .initial { font: italic 800 56px var(--pp-font-display); color: var(--pp-text-dim); }
+.project .body { padding: var(--pp-space-3); display: flex; flex-direction: column; gap: 4px; }
+.project.is-missing { opacity: .55; }
+.project .pp-card-foot { padding: 0 var(--pp-space-3) var(--pp-space-3); }
+.drop { border: 2px dashed var(--pp-line-strong); border-radius: var(--pp-radius-lg); padding: var(--pp-space-6) var(--pp-space-4);
+  text-align: center; background: var(--pp-sunken); cursor: pointer; transition: border-color var(--pp-fast), background var(--pp-fast); }
+.drop.is-over, .drop:hover { border-color: var(--pp-accent); }
+.drop.has-file { border-style: solid; border-color: var(--pp-ok); }
+.drop .big { font: italic 700 var(--pp-size-xl) var(--pp-font-display); letter-spacing: var(--pp-tracking-display); }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--pp-space-4); }
+.facing { display: flex; gap: var(--pp-space-2); flex-wrap: wrap; }
+.browser { border: 1px solid var(--pp-line); border-radius: var(--pp-radius-md); background: var(--pp-sunken); max-height: 52vh; overflow: auto; }
+.browser .row { display: flex; align-items: center; gap: var(--pp-space-3); padding: 8px var(--pp-space-3); cursor: pointer; border-bottom: 1px solid var(--pp-line); }
+.browser .row:hover { background: var(--pp-raised); }
+.browser .row .pp-tag { margin-left: auto; }
+.places { display: flex; gap: var(--pp-space-2); flex-wrap: wrap; }
+.path { font: 12px var(--pp-font-mono); color: var(--pp-text-muted); word-break: break-all; }
+.logview { margin: 0; max-height: 40vh; overflow: auto; padding: var(--pp-space-3); background: var(--pp-sunken); border: 1px solid var(--pp-line);
+  border-radius: var(--pp-radius-md); font: 12px/1.5 var(--pp-font-mono); white-space: pre-wrap; word-break: break-word; }
+.roster-row { display: flex; align-items: center; gap: var(--pp-space-3); }
+.roster-row .thumb { width: 40px; height: 40px; flex: none; display: grid; place-items: center; background: var(--pp-sunken); border: 1px solid var(--pp-line); }
+.roster-row .thumb img { width: 100%; height: 100%; object-fit: contain; }
+.toolbar { display: flex; gap: var(--pp-space-3); align-items: center; flex-wrap: wrap; }
+.busy { position: fixed; inset: 0; display: grid; place-items: center; background: rgba(0, 0, 0, .55); z-index: 50; }
+.busy .pp-frame { min-width: 340px; }
+@media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }

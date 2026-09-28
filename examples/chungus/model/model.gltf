@@ -1,0 +1,133 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "melee-character-studio model_kit"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "model"
+  }
+ ],
+ "meshes": [
+  {
+   "name": "model",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1,
+      "TEXCOORD_0": 2
+     },
+     "indices": 3,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "materials": [
+  {
+   "name": "atlas",
+   "pbrMetallicRoughness": {
+    "baseColorTexture": {
+     "index": 0
+    },
+    "metallicFactor": 0.0,
+    "roughnessFactor": 0.9
+   }
+  }
+ ],
+ "textures": [
+  {
+   "source": 0,
+   "sampler": 0
+  }
+ ],
+ "samplers": [
+  {
+   "magFilter": 9728,
+   "minFilter": 9728
+  }
+ ],
+ "images": [
+  {
+   "uri": "model.png"
+  }
+ ],
+ "buffers": [
+  {
+   "uri": "model.bin",
+   "byteLength": 138880
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 33288,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 33288,
+   "byteLength": 33288,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 66576,
+   "byteLength": 22192,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 88768,
+   "byteLength": 50112,
+   "target": 34963
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 2774,
+   "type": "VEC3",
+   "min": [
+    -8.4,
+    -0.07499999999999996,
+    -3.397586747892118
+   ],
+   "max": [
+    8.4,
+    10.400000000000002,
+    3.7
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 2774,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5126,
+   "count": 2774,
+   "type": "VEC2"
+  },
+  {
+   "bufferView": 3,
+   "componentType": 5125,
+   "count": 12528,
+   "type": "SCALAR"
+  }
+ ]
+}

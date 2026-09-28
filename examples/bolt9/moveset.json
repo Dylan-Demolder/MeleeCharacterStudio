@@ -1,0 +1,97 @@
+{
+  "base_fighter": "samus",
+  "moves": [
+    {
+      "name": "Arc Cannon",
+      "slot": "special_neutral",
+      "description": "Charge and fire a ball of lightning (Samus's charge shot; projectiles are not tunable).",
+      "actions": []
+    },
+    {
+      "name": "Seeker Missiles",
+      "slot": "special_side",
+      "description": "Homing or straight missiles (Samus's missiles).",
+      "actions": []
+    },
+    {
+      "name": "Tesla Coil",
+      "slot": "special_up",
+      "description": "A spinning coil of lightning.",
+      "actions": [
+        {
+          "action": "SpecialHi*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "electric"
+          }
+        },
+        {
+          "action": "SpecialAirHi*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "electric"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mag Mine",
+      "slot": "special_down",
+      "description": "Drop a magnetic mine (Samus's bomb).",
+      "actions": []
+    },
+    {
+      "name": "Overload",
+      "slot": "smash_forward",
+      "description": "Discharge the cannon point-blank.",
+      "actions": [
+        {
+          "action": "AttackS4*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "electric"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Discharge",
+      "slot": "smash_down",
+      "description": "Sweep the floor with a shock.",
+      "actions": [
+        {
+          "action": "AttackLw4",
+          "tuning": {
+            "element": "electric"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Static Kick",
+      "slot": "attack_air_forward",
+      "description": "Sparking aerial combo.",
+      "actions": [
+        {
+          "action": "AttackAirF",
+          "tuning": {
+            "element": "electric"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Thruster Stomp",
+      "slot": "attack_air_down",
+      "description": "Thruster-driven downward stomp.",
+      "actions": [
+        {
+          "action": "AttackAirLw",
+          "tuning": {
+            "element": "electric"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "base_fighter": "mewtwo",
+  "moves": [
+    {
+      "name": "Shadow Orb",
+      "slot": "special_neutral",
+      "description": "Charge an orb of shadow (Mewtwo's shadow ball; projectiles are not tunable).",
+      "actions": []
+    },
+    {
+      "name": "Shadow Grasp",
+      "slot": "special_side",
+      "description": "Seize and fling foes with a shadow hand.",
+      "actions": [
+        {
+          "action": "SpecialS*",
+          "tuning": {
+            "damage_scale": 1.3,
+            "element": "dark"
+          }
+        },
+        {
+          "action": "SpecialAirS*",
+          "tuning": {
+            "damage_scale": 1.3,
+            "element": "dark"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Shadow Step",
+      "slot": "special_up",
+      "description": "Vanish into shadow and reappear (Mewtwo's teleport).",
+      "actions": []
+    },
+    {
+      "name": "Veil",
+      "slot": "special_down",
+      "description": "A stare that freezes foes in place (Disable's effect is kept).",
+      "actions": []
+    },
+    {
+      "name": "Umbral Edge",
+      "slot": "smash_forward",
+      "description": "A shadow burst from the palm.",
+      "actions": [
+        {
+          "action": "AttackS4*",
+          "tuning": {
+            "element": "dark"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Eclipse",
+      "slot": "smash_up",
+      "description": "A rising arc of darkness.",
+      "actions": [
+        {
+          "action": "AttackHi4",
+          "tuning": {
+            "element": "dark"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Night Blade",
+      "slot": "attack_air_back",
+      "description": "A backward tail-whip of shadow.",
+      "actions": [
+        {
+          "action": "AttackAirB",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "dark"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "base_fighter": "bowser",
+  "moves": [
+    {
+      "name": "Frost Breath",
+      "slot": "special_neutral",
+      "description": "A freezing breath (hitboxes only; if the base breath is a projectile it is left as is).",
+      "actions": [
+        {
+          "action": "SpecialN*",
+          "tuning": {
+            "element": "ice"
+          }
+        },
+        {
+          "action": "SpecialAirN*",
+          "tuning": {
+            "element": "ice"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Glacial Grip",
+      "slot": "special_side",
+      "description": "Grab and crush in an icy claw.",
+      "actions": [
+        {
+          "action": "SpecialS*",
+          "tuning": {
+            "element": "ice"
+          }
+        },
+        {
+          "action": "SpecialAirS*",
+          "tuning": {
+            "element": "ice"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Avalanche Spin",
+      "slot": "special_up",
+      "description": "A spinning fortress of ice.",
+      "actions": [
+        {
+          "action": "SpecialHi*",
+          "tuning": {
+            "element": "ice"
+          }
+        },
+        {
+          "action": "SpecialAirHi*",
+          "tuning": {
+            "element": "ice"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Iceberg Drop",
+      "slot": "special_down",
+      "description": "Leap and slam down like a falling iceberg.",
+      "actions": [
+        {
+          "action": "SpecialLw*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "ice"
+          }
+        },
+        {
+          "action": "SpecialAirLw*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "ice"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Permafrost Smash",
+      "slot": "smash_forward",
+      "description": "A freezing headbutt.",
+      "actions": [
+        {
+          "action": "AttackS4*",
+          "tuning": {
+            "element": "ice"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Frost Quake",
+      "slot": "smash_down",
+      "description": "Spinning shell of ice.",
+      "actions": [
+        {
+          "action": "AttackLw4",
+          "tuning": {
+            "element": "ice"
+          }
+        }
+      ]
+    }
+  ]
+}

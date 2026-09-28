@@ -1,0 +1,39 @@
+{
+  "name": "Umbra",
+  "notes": "An original shadow ninja on Mewtwo's frame (psychic teleport becomes a shadow step): charcoal wraps, a violet scarf trailing behind, glowing eye slit, a katana across the back. Mewtwo's tail joints are left unskinned.",
+  "palette": {"suit": "#24212e", "suit_dark": "#16141d", "wrap": "#3a3548", "scarf": "#7a33c7", "scarf_dark": "#52208a", "glow": "#e2b8ff", "skin": "#c9a58c", "metal": "#a9b0bd", "hilt": "#5a1f2c", "sheath": "#101014"},
+  "landmarks": {
+    "pelvis": [0, 11.2, 0], "chest": [0, 15.0, 0], "neck": [0, 19.0, 0.3], "head": [0, 20.5, 0.5],
+    "r_shoulder": [-2.4, 18.0, 0], "r_elbow": [-5.6, 17.8, 0], "r_wrist": [-8.8, 17.6, 0], "r_hand": [-9.8, 17.6, 0.1],
+    "r_hip": [-1.4, 10.7, 0], "r_knee": [-1.7, 6.0, 0.7], "r_ankle": [-1.75, 1.2, -0.2], "r_toe": [-1.75, 0.3, 1.9]
+  },
+  "parts": [
+    {"shape": "capsule", "from": [0, 10.3, 0], "to": [0, 12.6, 0], "radius": [1.55, 1.4], "color": "suit", "segment": "pelvis", "sides": 12},
+    {"shape": "cylinder", "from": [0, 12.0, 0], "to": [0, 12.8, 0], "radius": [1.55, 1.5], "color": "scarf_dark", "segment": "pelvis", "sides": 10},
+    {"shape": "extrude", "origin": [-0.8, 12.4, 1.45], "u": [0, -1, 0], "v": [1, 0, 0], "thickness": 0.15, "color": "scarf_dark", "segment": "pelvis",
+     "points": [[0, -0.3], [3.2, -0.6], [3.6, 0.3], [0, 0.3]]},
+    {"shape": "capsule", "from": [0, 12.8, 0], "to": [0, 17.1, 0.1], "radius": [1.4, 1.85], "color": "suit", "segment": "chest", "sides": 12},
+    {"shape": "box", "from": [-1.5, 17.3, 1.6], "to": [1.4, 12.9, 1.45], "size": [0.5, 0.2], "color": "wrap", "segment": "chest"},
+    {"shape": "box", "from": [-2.2, 12.8, -2.2], "to": [2.4, 19.6, -2.05], "size": [0.55, 0.35], "color": "sheath", "segment": "chest"},
+    {"shape": "box", "from": [2.4, 19.6, -2.05], "to": [3.2, 21.0, -2.0], "size": [0.35, 0.3], "color": "hilt", "segment": "chest"},
+    {"shape": "box", "center": [2.35, 19.55, -2.05], "size": [1.1, 0.25, 0.8], "rotate": [0, 0, 56], "color": "metal", "segment": "chest"},
+    {"shape": "cylinder", "from": [0, 17.9, 0.15], "to": [0, 19.2, 0.3], "radius": [1.25, 1.05], "color": "scarf", "segment": "head", "sides": 10},
+    {"shape": "extrude", "origin": [0.3, 18.6, -0.9], "u": [0, 0, -1], "v": [0, 1, 0], "thickness": 0.14, "color": "scarf", "segment": "chest",
+     "points": [[0, 0.5], [2.4, 0.1], [4.6, -0.9], [6.2, -0.5], [5.2, -1.5], [2.6, -1.1], [0, -0.5]]},
+    {"shape": "extrude", "origin": [-0.3, 18.5, -0.9], "u": [0, 0, -1], "v": [0, 1, 0], "thickness": 0.14, "color": "scarf_dark", "segment": "chest",
+     "points": [[0, 0.3], [2.0, -0.4], [3.6, -1.8], [4.6, -1.4], [3.9, -2.4], [1.8, -1.3], [0, -0.6]]},
+    {"shape": "sphere", "center": [0, 20.6, 0.5], "radius": [1.12, 1.3, 1.2], "color": "suit_dark", "segment": "head"},
+    {"shape": "box", "center": [0, 20.75, 1.45], "size": [1.7, 0.36, 0.4], "color": "skin", "segment": "head"},
+    {"shape": "box", "center": [-0.42, 20.76, 1.62], "size": [0.46, 0.14, 0.12], "color": "glow", "segment": "head", "mirror": true},
+    {"shape": "cone", "from": [-0.6, 21.5, -0.3], "to": [-1.1, 22.6, -1.5], "radius": 0.28, "sides": 5, "color": "suit_dark", "segment": "head", "mirror": true},
+    {"shape": "sphere", "center": {"at": "r_shoulder", "offset": [0, 0.25, 0]}, "radius": [0.95, 0.75, 0.9], "color": "wrap", "segment": "r_upper", "mirror": true},
+    {"shape": "capsule", "from": "r_shoulder", "to": "r_elbow", "radius": [0.62, 0.5], "color": "suit", "segment": "r_upper", "mirror": true},
+    {"shape": "capsule", "from": "r_elbow", "to": "r_wrist", "radius": [0.5, 0.42], "color": "suit", "segment": "r_fore", "mirror": true},
+    {"shape": "cylinder", "from": {"lerp": ["r_elbow", "r_wrist", 0.5]}, "to": {"at": "r_wrist", "offset": [0.05, 0, 0]}, "radius": [0.54, 0.5], "color": "wrap", "segment": "r_fore", "sides": 7, "mirror": true},
+    {"shape": "box", "center": {"lerp": ["r_wrist", "r_hand", 0.55]}, "size": [1.05, 0.8, 0.95], "color": "suit_dark", "segment": "r_hand", "mirror": true},
+    {"shape": "capsule", "from": "r_hip", "to": "r_knee", "radius": [1.05, 0.72], "color": "suit", "segment": "r_thigh", "mirror": true},
+    {"shape": "capsule", "from": "r_knee", "to": "r_ankle", "radius": [0.7, 0.48], "color": "suit", "segment": "r_shin", "mirror": true},
+    {"shape": "cylinder", "from": {"lerp": ["r_knee", "r_ankle", 0.35]}, "to": {"at": "r_ankle", "offset": [0, 0.25, 0]}, "radius": [0.72, 0.56], "color": "wrap", "segment": "r_shin", "sides": 7, "mirror": true},
+    {"shape": "box", "from": {"at": "r_ankle", "offset": [0, -0.6, -0.4]}, "to": {"at": "r_toe", "offset": [0, -0.05, 0]}, "size": [1.0, 0.85], "color": "suit_dark", "segment": "r_foot", "mirror": true}
+  ]
+}

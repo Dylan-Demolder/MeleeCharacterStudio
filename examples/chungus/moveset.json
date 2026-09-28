@@ -1,0 +1,80 @@
+{
+  "base_fighter": "jigglypuff",
+  "moves": [
+    {
+      "name": "Echo Dive",
+      "slot": "special_neutral",
+      "description": "Wrap in her wings and roll through foes, trailing darkness.",
+      "actions": [
+        {
+          "action": "SpecialN*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "dark"
+          }
+        },
+        {
+          "action": "SpecialAirN*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "dark"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Blaze Dash",
+      "slot": "special_side",
+      "description": "Fox's Illusion: a blurred dash straight through the opponent.",
+      "actions": [],
+      "graft": {
+        "fighter": "fox"
+      }
+    },
+    {
+      "name": "Night Flare",
+      "slot": "special_up",
+      "description": "Fox's Firefox: charge up, then launch in any direction wreathed in flame.",
+      "actions": [],
+      "graft": {
+        "fighter": "fox"
+      }
+    },
+    {
+      "name": "Wing Cyclone",
+      "slot": "special_down",
+      "description": "Luigi's Cyclone: spin with wings out; mash B to rise.",
+      "actions": [],
+      "graft": {
+        "fighter": "luigi"
+      }
+    },
+    {
+      "name": "Wing Spin",
+      "slot": "attack_air_neutral",
+      "description": "Spinning body check in the air.",
+      "actions": [
+        {
+          "action": "AttackAirN",
+          "tuning": {
+            "damage_scale": 1.1
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bat Kick",
+      "slot": "attack_air_back",
+      "description": "Backward drop-kick.",
+      "actions": [
+        {
+          "action": "AttackAirB",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "dark"
+          }
+        }
+      ]
+    }
+  ]
+}

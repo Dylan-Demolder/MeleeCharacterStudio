@@ -1,0 +1,50 @@
+{
+  "name": "Cinder",
+  "notes": "An original fire-demon warlord on Ganondorf's frame: charcoal skin cracked with embers, black plate with a molten core, curling horns, a mane of flame, spiked pauldrons and a long red cape.",
+  "palette": {"skin": "#3a211c", "armor": "#26262d", "armor_light": "#3d3d48", "ember": "#ff6a1a", "ember_hot": "#ffd24a", "flame": "#ff8c1f", "flame_hot": "#ffe066", "horn": "#e8dcc2", "cape": "#8e1717", "cape_in": "#3a0909", "gold": "#c9962e", "eye": "#fff27a"},
+  "decals": {
+    "cracks": {"rows": ["AAAAAAAAAA", "AAeAAAAeAA", "AAAeAAAeAA", "AAAAeeeAAA", "AeAAeHeAAe", "AAeeeHeeAA", "AAAAeHeAAA", "AAAeAeAeAA", "AAeAAAAAeA", "AAAAAAAAAA"], "colors": {"A": "armor", "e": "ember", "H": "ember_hot"}},
+    "belt": {"rows": ["DDDDGGDDDD", "DDDGHHGDDD", "DDDDGGDDDD"], "colors": {"D": "armor_light", "G": "gold", "H": "ember_hot"}}
+  },
+  "landmarks": {
+    "pelvis": [0, 12, 0], "chest": [0, 16.5, 0.3], "neck": [0, 21.4, 0.6], "head": [0, 23.2, 1.0],
+    "r_shoulder": [-4.0, 20.3, 0], "r_elbow": [-8.3, 20.0, 0], "r_wrist": [-12.5, 19.7, 0.2], "r_hand": [-14.0, 19.7, 0.3],
+    "r_hip": [-2.0, 11.5, 0], "r_knee": [-2.3, 6.2, 0.5], "r_ankle": [-2.4, 1.3, 0], "r_toe": [-2.4, 0.4, 2.6]
+  },
+  "parts": [
+    {"shape": "box", "center": [0, 11.9, 0], "size": [4.8, 2.6, 3.6], "color": "armor_light", "segment": "pelvis", "faces": {"front": "belt"}},
+    {"shape": "extrude", "origin": [0, 10.8, 1.9], "u": [1, 0, 0], "v": [0, 1, 0], "thickness": 0.2, "color": "cape", "segment": "pelvis",
+     "points": [[-1.3, 0], [1.3, 0], [1.0, -4.2], [0, -4.8], [-1.0, -4.2]]},
+    {"shape": "capsule", "from": [0, 13.2, 0.2], "to": [0, 18.6, 0.4], "radius": [2.4, 3.2], "color": "skin", "segment": "chest", "sides": 12},
+    {"shape": "box", "center": [0, 17.4, 0.4], "size": [6.4, 5.0, 5.2], "rotate": [4, 0, 0], "color": "armor", "segment": "chest", "faces": {"front": "cracks"}},
+    {"shape": "sphere", "center": [0, 17.6, 3.05], "radius": [0.9, 0.9, 0.4], "color": "ember_hot", "segment": "chest"},
+    {"shape": "extrude", "origin": [0, 20.4, -2.5], "u": [1, 0, 0], "v": [0, 1, 0], "thickness": 0.3, "color": "cape", "segment": "chest",
+     "points": [[-3.8, 0], [3.8, 0], [4.8, -13.2], [2.0, -12.4], [0, -13.8], [-2.0, -12.4], [-4.8, -13.2]]},
+    {"shape": "extrude", "origin": [0, 20.4, -2.25], "u": [1, 0, 0], "v": [0, 1, 0], "thickness": 0.12, "color": "cape_in", "segment": "chest",
+     "points": [[-3.6, -0.2], [3.6, -0.2], [4.6, -13.0], [2.0, -12.2], [0, -13.6], [-2.0, -12.2], [-4.6, -13.0]]},
+    {"shape": "capsule", "from": [0, 20.6, 0.5], "to": [0, 22.3, 0.8], "radius": [1.35, 1.2], "color": "skin", "segment": "head"},
+    {"shape": "sphere", "center": [0, 23.3, 1.1], "radius": [1.55, 1.75, 1.6], "color": "skin", "segment": "head"},
+    {"shape": "box", "center": [0, 22.5, 2.4], "size": [2.0, 0.9, 0.7], "color": "armor", "segment": "head"},
+    {"shape": "box", "center": [-0.6, 23.6, 2.55], "size": [0.6, 0.22, 0.2], "rotate": [0, 0, -14], "color": "eye", "segment": "head", "mirror": true},
+    {"shape": "cone", "from": [-1.2, 24.3, 1.0], "to": [-2.9, 25.6, 0.2], "radius": 0.5, "sides": 7, "color": "horn", "segment": "head", "mirror": true},
+    {"shape": "cone", "from": [-2.85, 25.55, 0.25], "to": [-3.3, 27.4, -0.6], "radius": 0.34, "sides": 6, "color": "horn", "segment": "head", "mirror": true},
+    {"shape": "cone", "from": [0, 24.6, 0.4], "to": [0, 28.2, -1.4], "radius": 1.2, "sides": 7, "color": "flame", "segment": "head"},
+    {"shape": "cone", "from": [-0.8, 24.2, 0.0], "to": [-1.3, 26.8, -2.2], "radius": 0.9, "sides": 6, "color": "flame", "segment": "head", "mirror": true},
+    {"shape": "cone", "from": [0, 24.3, -0.2], "to": [0, 26.0, -3.2], "radius": 0.9, "sides": 6, "color": "flame_hot", "segment": "head"},
+    {"shape": "cone", "from": [0, 24.4, 0.9], "to": [0, 26.6, -0.3], "radius": 0.6, "sides": 6, "color": "flame_hot", "segment": "head"},
+    {"shape": "box", "center": [-4.4, 21.1, 0], "size": [3.6, 2.4, 3.8], "rotate": [0, 0, -16], "color": "armor", "segment": "r_upper", "mirror": true},
+    {"shape": "cone", "from": [-4.6, 22.0, 0.9], "to": [-5.8, 24.4, 1.0], "radius": 0.55, "sides": 6, "color": "horn", "segment": "r_upper", "mirror": true},
+    {"shape": "cone", "from": [-4.6, 22.0, -0.9], "to": [-5.8, 24.2, -1.3], "radius": 0.55, "sides": 6, "color": "horn", "segment": "r_upper", "mirror": true},
+    {"shape": "capsule", "from": "r_shoulder", "to": "r_elbow", "radius": [1.35, 1.1], "color": "skin", "segment": "r_upper", "mirror": true},
+    {"shape": "capsule", "from": "r_elbow", "to": "r_wrist", "radius": [1.1, 0.95], "color": "skin", "segment": "r_fore", "mirror": true},
+    {"shape": "cylinder", "from": {"lerp": ["r_elbow", "r_wrist", 0.3]}, "to": {"at": "r_wrist", "offset": [0.1, 0, 0]}, "radius": [1.2, 1.35], "color": "armor_light", "segment": "r_fore", "sides": 8, "mirror": true},
+    {"shape": "cylinder", "from": {"lerp": ["r_elbow", "r_wrist", 0.62]}, "to": {"lerp": ["r_elbow", "r_wrist", 0.7]}, "radius": [1.3, 1.32], "color": "ember", "segment": "r_fore", "sides": 8, "mirror": true},
+    {"shape": "box", "center": {"lerp": ["r_wrist", "r_hand", 0.55]}, "size": [1.9, 1.6, 1.8], "color": "armor", "segment": "r_hand", "mirror": true},
+    {"shape": "capsule", "from": "r_hip", "to": "r_knee", "radius": [1.55, 1.25], "color": "skin", "segment": "r_thigh", "mirror": true},
+    {"shape": "box", "from": {"at": "r_hip", "offset": [-0.4, -0.2, 0]}, "to": {"lerp": ["r_hip", "r_knee", 0.6]}, "size": [2.0, 3.2], "color": "armor", "segment": "r_thigh", "mirror": true},
+    {"shape": "capsule", "from": "r_knee", "to": "r_ankle", "radius": [1.15, 0.9], "color": "skin", "segment": "r_shin", "mirror": true},
+    {"shape": "cylinder", "from": {"lerp": ["r_knee", "r_ankle", 0.0]}, "to": {"at": "r_ankle", "offset": [0, -0.2, 0]}, "radius": [1.3, 1.15], "color": "armor", "segment": "r_shin", "sides": 8, "mirror": true},
+    {"shape": "cone", "from": {"at": "r_knee", "offset": [0, 0.1, 0.9]}, "to": {"at": "r_knee", "offset": [0, 1.3, 2.2]}, "radius": 0.45, "sides": 6, "color": "horn", "segment": "r_shin", "mirror": true},
+    {"shape": "box", "from": {"at": "r_ankle", "offset": [0, -0.9, -0.9]}, "to": {"at": "r_toe", "offset": [0, 0.0, 0.3]}, "size": [2.0, 1.5], "color": "armor_light", "segment": "r_foot", "mirror": true}
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "game_version",
+    "calibration_version",
+    "unit_system",
+    "source",
+    "attributes"
+  ],
+  "properties": {
+    "game_version": {
+      "const": "GALE01-1.02"
+    },
+    "calibration_version": {
+      "type": "string"
+    },
+    "unit_system": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "unit",
+          "minimum",
+          "maximum",
+          "default"
+        ],
+        "properties": {
+          "unit": {
+            "type": "string"
+          },
+          "minimum": {
+            "type": "number"
+          },
+          "maximum": {
+            "type": "number"
+          },
+          "default": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

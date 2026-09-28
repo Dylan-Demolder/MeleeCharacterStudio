@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Character Studio</title>
+  <link rel="stylesheet" href="pascal-ui.css">
+  <link rel="stylesheet" href="start.css">
+</head>
+<body class="pp-root">
+  <div class="pp-app">
+    <header class="pp-titlebar">
+      <a class="pp-brand" href="#home" data-tip="Character Studio: make Melee fighters from your own models.">
+        <span class="pp-brand-mark">C</span>
+        <span class="pp-brand-name">Character<b>Studio</b></span>
+      </a>
+      <span class="pp-tag" id="built-on" data-tip="Characters built here load through PascalPatch.">for PascalPatch</span>
+      <span class="pp-spacer"></span>
+      <button class="pp-btn pp-btn--primary pp-btn--sm" id="new-top" data-tip="Start a new character from a 3D model.">New project</button>
+    </header>
+
+    <nav class="pp-nav" id="nav" aria-label="Sections">
+      <div class="pp-nav-label">Projects</div>
+      <a class="pp-nav-item" href="#home" data-tip="Your recent characters. Pick one to keep working on it.">Home</a>
+      <a class="pp-nav-item" href="#new" data-tip="Start a character from a .glb, .gltf (zipped with its files) or .obj model.">New project</a>
+      <a class="pp-nav-item" href="#open" data-tip="Open a project folder from anywhere on this PC.">Open</a>
+      <div class="pp-nav-label">Game</div>
+      <a class="pp-nav-item" href="#roster" data-tip="Put several characters together and build them for PascalPatch.">Roster</a>
+      <div class="pp-nav-label">Studio</div>
+      <a class="pp-nav-item" href="#settings" data-tip="Your Melee disc, where projects go, and PascalPatch.">Settings</a>
+    </nav>
+
+    <main class="pp-main"><div class="pp-page" id="page"></div></main>
+
+    <footer class="pp-statusbar">
+      <span id="tip">Open a recent character or start a new one.</span>
+      <span class="pp-spacer"></span>
+      <span class="pp-dim pp-mono" id="footer-dir"></span>
+    </footer>
+  </div>
+  <div class="pp-toasts" id="toasts" aria-live="polite"></div>
+  <dialog class="pp-dialog" id="dialog"></dialog>
+  <script src="start.js"></script>
+</body>
+</html>

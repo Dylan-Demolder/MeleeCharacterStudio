@@ -1,0 +1,39 @@
+{
+  "name": "Glacier",
+  "notes": "An original ice golem on Bowser's heavyweight frame: faceted ice blocks, a crest of crystal spikes down the back, glowing eyes and heavy fists.",
+  "palette": {"ice": "#a8dcf2", "ice_mid": "#7fc2e8", "ice_deep": "#4f93c9", "ice_dark": "#2f5f95", "frost": "#e6f7ff", "glow": "#e9ffff", "core": "#5ff0ff", "rock": "#51647a"},
+  "decals": {
+    "core": {"rows": ["DDDDDDDD", "DDMMMMDD", "DMMccMMD", "DMcCCcMD", "DMcCCcMD", "DMMccMMD", "DDMMMMDD", "DDDDDDDD"], "colors": {"D": "ice_mid", "M": "ice_deep", "c": "core", "C": "glow"}}
+  },
+  "landmarks": {
+    "pelvis": [0, 9, 0], "chest": [0, 14, 0.4], "neck": [0, 19.6, 1.4], "head": [0, 21.6, 2.4],
+    "r_shoulder": [-6.0, 18.3, 0], "r_elbow": [-10.4, 17.9, 0], "r_wrist": [-14.4, 17.5, 0.4], "r_hand": [-16.2, 17.5, 0.7],
+    "r_hip": [-3.0, 8.5, 0], "r_knee": [-3.6, 4.8, 0.8], "r_ankle": [-3.8, 1.3, 0], "r_toe": [-3.8, 0.3, 3.0]
+  },
+  "parts": [
+    {"shape": "box", "center": [0, 9.3, 0], "size": [7.6, 3.2, 5.6], "color": "ice_deep", "segment": "pelvis"},
+    {"shape": "box", "center": [0, 11.8, 0.4], "size": [8.4, 3.4, 6.4], "rotate": [0, 12, 0], "color": "ice_mid", "segment": "pelvis"},
+    {"shape": "box", "center": [0, 16.0, 0.4], "size": [11.2, 6.8, 7.4], "rotate": [6, 0, 0], "color": "ice", "segment": "chest"},
+    {"shape": "box", "center": [0, 16.2, 4.0], "size": [3.4, 3.4, 0.4], "rotate": [6, 0, 0], "color": "ice_mid", "segment": "chest", "faces": {"front": "core"}},
+    {"shape": "box", "center": [-2.6, 17.6, 3.3], "size": [4.4, 3.0, 1.4], "rotate": [10, -12, 4], "color": "frost", "segment": "chest", "mirror": true},
+    {"shape": "box", "center": [0, 19.8, 1.5], "size": [4.6, 1.8, 4.6], "rotate": [0, 45, 0], "color": "ice_deep", "segment": "chest"},
+    {"shape": "box", "center": [0, 21.9, 2.6], "size": [4.8, 4.2, 4.6], "rotate": [4, 0, 0], "color": "ice", "segment": "head"},
+    {"shape": "box", "center": [0, 23.2, 3.4], "size": [5.2, 1.0, 3.2], "rotate": [-12, 0, 0], "color": "ice_dark", "segment": "head"},
+    {"shape": "box", "center": [-1.1, 22.25, 4.85], "size": [1.1, 0.55, 0.3], "color": "core", "segment": "head", "mirror": true},
+    {"shape": "box", "center": [0, 20.6, 4.75], "size": [2.6, 0.5, 0.4], "color": "ice_dark", "segment": "head"},
+    {"shape": "cone", "from": [-1.6, 23.2, 2.0], "to": [-2.6, 26.2, 0.6], "radius": 0.9, "sides": 5, "color": "frost", "segment": "head", "mirror": true},
+    {"shape": "cone", "from": [0, 20.0, -2.6], "to": [0, 24.6, -5.8], "radius": 1.5, "sides": 5, "color": "frost", "segment": "chest"},
+    {"shape": "cone", "from": [-2.6, 18.2, -3.0], "to": [-4.0, 22.2, -6.6], "radius": 1.3, "sides": 5, "color": "ice", "segment": "chest", "mirror": true},
+    {"shape": "cone", "from": [0, 15.0, -3.2], "to": [0, 17.8, -7.6], "radius": 1.3, "sides": 5, "color": "frost", "segment": "chest"},
+    {"shape": "cone", "from": [-2.4, 13.4, -2.9], "to": [-3.4, 15.4, -6.8], "radius": 1.1, "sides": 5, "color": "ice", "segment": "chest", "mirror": true},
+    {"shape": "cone", "from": [0, 11.2, -2.8], "to": [0, 12.2, -6.4], "radius": 1.0, "sides": 5, "color": "frost", "segment": "pelvis"},
+    {"shape": "box", "center": [-6.2, 18.8, 0], "size": [5.0, 4.8, 5.2], "rotate": [12, 18, 14], "color": "ice_mid", "segment": "r_upper", "mirror": true},
+    {"shape": "cone", "from": [-6.6, 20.6, 0], "to": [-7.6, 23.4, -0.6], "radius": 1.0, "sides": 5, "color": "frost", "segment": "r_upper", "mirror": true},
+    {"shape": "box", "from": "r_shoulder", "to": "r_elbow", "size": [3.4, 3.4], "color": "ice", "segment": "r_upper", "mirror": true},
+    {"shape": "box", "from": "r_elbow", "to": "r_wrist", "size": [4.2, 4.4], "extend": 0.3, "color": "ice_mid", "segment": "r_fore", "mirror": true},
+    {"shape": "box", "center": {"lerp": ["r_wrist", "r_hand", 0.55]}, "size": [3.8, 4.2, 4.4], "rotate": [8, 12, 10], "color": "ice_deep", "segment": "r_hand", "mirror": true},
+    {"shape": "box", "from": "r_hip", "to": "r_knee", "size": [4.2, 4.4], "extend": 0.4, "color": "ice_mid", "segment": "r_thigh", "mirror": true},
+    {"shape": "box", "from": "r_knee", "to": "r_ankle", "size": [3.8, 4.0], "extend": 0.2, "color": "ice", "segment": "r_shin", "mirror": true},
+    {"shape": "box", "from": {"at": "r_ankle", "offset": [0, -0.7, -1.4]}, "to": {"at": "r_toe", "offset": [0, 0.1, 0.2]}, "size": [4.2, 2.0], "color": "ice_deep", "segment": "r_foot", "mirror": true}
+  ]
+}

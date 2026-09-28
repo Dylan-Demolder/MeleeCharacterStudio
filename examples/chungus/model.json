@@ -1,0 +1,36 @@
+{
+  "name": "Chungus",
+  "notes": "A round purple bat built on Jigglypuff's frame: ball body, huge ears, wing membranes on the arms (kept at modelled size with uniform arm segments), fangs and a lighter belly.",
+  "palette": {"fur": "#7a3fa6", "fur_dark": "#5a2a80", "belly": "#b88ad6", "wing": "#3f1d5c", "bone": "#2c1242", "ear_in": "#e89cc4", "eye": "#ffffff", "iris": "#c21f4a", "pupil": "#1a0610", "fang": "#fbf7ef", "foot": "#4a2168"},
+  "landmarks": {
+    "pelvis": [0, 3.0, 0], "chest": [0, 4.6, 0], "neck": [0, 6.4, 0.1], "head": [0, 7.0, 0.2],
+    "r_shoulder": [-3.2, 4.8, 0], "r_elbow": [-5.0, 5.1, 0], "r_wrist": [-6.8, 5.3, 0], "r_hand": [-7.4, 5.3, 0],
+    "r_hip": [-1.4, 2.0, 0.2], "r_knee": [-1.5, 1.2, 0.4], "r_ankle": [-1.55, 0.45, 0.4], "r_toe": [-1.55, 0.1, 1.4]
+  },
+  "parts": [
+    {"shape": "sphere", "center": [0, 4.3, 0], "radius": [3.7, 3.55, 3.45], "color": "fur", "segment": "chest", "rings": 12, "sides": 18},
+    {"shape": "sphere", "center": [0, 3.3, 0.2], "radius": [2.6, 1.6, 2.9], "color": "fur", "segment": "pelvis", "rings": 8, "sides": 14},
+    {"shape": "sphere", "center": [0, 3.7, 1.85], "radius": [2.4, 2.1, 1.75], "color": "belly", "segment": "chest"},
+    {"shape": "sphere", "center": [0, 7.6, -0.3], "radius": [0.9, 0.6, 0.8], "color": "fur_dark", "segment": "head"},
+    {"shape": "cone", "from": [-1.5, 6.6, -0.2], "to": [-3.1, 10.4, -0.6], "radius": 1.25, "sides": 10, "color": "fur", "segment": "chest", "mirror": true},
+    {"shape": "cone", "from": [-1.55, 6.9, 0.45], "to": [-2.95, 9.9, -0.25], "radius": 0.8, "sides": 8, "color": "ear_in", "segment": "chest", "mirror": true},
+    {"shape": "sphere", "center": [-1.25, 5.3, 2.95], "radius": [0.95, 1.15, 0.5], "color": "eye", "segment": "chest", "rotate": [0, -18, 0], "mirror": true},
+    {"shape": "sphere", "center": [-1.18, 5.25, 3.28], "radius": [0.62, 0.78, 0.32], "color": "iris", "segment": "chest", "rotate": [0, -18, 0], "mirror": true},
+    {"shape": "sphere", "center": [-1.14, 5.2, 3.5], "radius": [0.3, 0.42, 0.18], "color": "pupil", "segment": "chest", "rotate": [0, -18, 0], "mirror": true},
+    {"shape": "sphere", "center": [-0.95, 5.6, 3.62], "radius": [0.14, 0.14, 0.08], "color": "eye", "segment": "chest", "mirror": true},
+    {"shape": "cone", "from": [-0.42, 3.95, 3.3], "to": [-0.36, 3.2, 3.42], "radius": 0.2, "sides": 6, "color": "fang", "segment": "chest", "mirror": true},
+    {"shape": "capsule", "from": [-0.6, 4.05, 3.35], "to": [0.6, 4.05, 3.35], "radius": 0.1, "sides": 6, "color": "pupil", "segment": "chest"},
+    {"shape": "capsule", "from": "r_shoulder", "to": "r_elbow", "radius": [0.42, 0.3], "color": "bone", "segment": "r_upper", "sides": 8, "mirror": true},
+    {"shape": "capsule", "from": "r_elbow", "to": "r_wrist", "radius": [0.3, 0.2], "color": "bone", "segment": "r_fore", "sides": 8, "mirror": true},
+    {"shape": "cone", "from": "r_wrist", "to": [-8.4, 5.9, 0], "radius": 0.2, "sides": 6, "color": "bone", "segment": "r_hand", "mirror": true},
+    {"shape": "extrude", "origin": [-3.0, 4.8, -0.15], "u": [-1, 0, 0], "v": [0, 1, 0], "thickness": 0.14, "color": "wing", "segment": "r_upper", "mirror": true,
+     "points": [[0, 0.3], [2.1, 0.55], [2.1, -2.2], [1.1, -2.6], [0, -1.6]]},
+    {"shape": "extrude", "origin": [-5.0, 5.1, -0.15], "u": [-1, 0, 0], "v": [0, 1, 0], "thickness": 0.14, "color": "wing", "segment": "r_fore", "mirror": true,
+     "points": [[-0.1, 0.25], [1.9, 0.45], [2.0, -1.6], [1.0, -1.9], [-0.1, -2.5]]},
+    {"shape": "extrude", "origin": [-6.8, 5.3, -0.15], "u": [-1, 0, 0], "v": [0, 1, 0], "thickness": 0.14, "color": "wing", "segment": "r_hand", "mirror": true,
+     "points": [[-0.1, 0.25], [1.6, 0.6], [1.1, -0.6], [0.6, -1.0], [-0.1, -1.8]]},
+    {"shape": "capsule", "from": "r_hip", "to": "r_knee", "radius": [0.55, 0.45], "color": "foot", "segment": "r_thigh", "mirror": true},
+    {"shape": "capsule", "from": "r_knee", "to": "r_ankle", "radius": [0.42, 0.36], "color": "foot", "segment": "r_shin", "mirror": true},
+    {"shape": "sphere", "center": {"lerp": ["r_ankle", "r_toe", 0.5]}, "radius": [0.6, 0.35, 0.8], "color": "foot", "segment": "r_foot", "mirror": true}
+  ]
+}

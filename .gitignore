@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.melee-character
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+# Local Melee assets and generated runtime outputs
+*.iso
+*.dat
+*.dol
+*.gci

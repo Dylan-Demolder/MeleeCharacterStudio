@@ -1,0 +1,110 @@
+{
+  "base_fighter": "marth",
+  "moves": [
+    {
+      "name": "Comet Breaker",
+      "slot": "special_neutral",
+      "description": "Charge a comet into the blade and release it.",
+      "actions": [
+        {
+          "action": "SpecialN*",
+          "tuning": {
+            "element": "electric"
+          }
+        },
+        {
+          "action": "SpecialAirN*",
+          "tuning": {
+            "element": "electric"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Constellation",
+      "slot": "special_side",
+      "description": "A four-hit combo traced like a constellation.",
+      "actions": [
+        {
+          "action": "SpecialS*",
+          "tuning": {
+            "element": "electric"
+          }
+        },
+        {
+          "action": "SpecialAirS*",
+          "tuning": {
+            "element": "electric"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Starfall Slash",
+      "slot": "special_up",
+      "description": "A rising arc that leaves a streak of starlight.",
+      "actions": [
+        {
+          "action": "SpecialHi*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "electric"
+          }
+        },
+        {
+          "action": "SpecialAirHi*",
+          "tuning": {
+            "damage_scale": 1.1,
+            "element": "electric"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Aegis",
+      "slot": "special_down",
+      "description": "A counter stance; the riposte crackles with starlight.",
+      "actions": [
+        {
+          "action": "SpecialLw*",
+          "tuning": {
+            "element": "electric"
+          }
+        },
+        {
+          "action": "SpecialAirLw*",
+          "tuning": {
+            "element": "electric"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Supernova",
+      "slot": "smash_forward",
+      "description": "A blinding overhead cut.",
+      "actions": [
+        {
+          "action": "AttackS4*",
+          "tuning": {
+            "damage_scale": 1.08,
+            "element": "electric"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meteor",
+      "slot": "attack_air_down",
+      "description": "A downward arc that spikes.",
+      "actions": [
+        {
+          "action": "AttackAirLw",
+          "tuning": {
+            "element": "electric"
+          }
+        }
+      ]
+    }
+  ]
+}

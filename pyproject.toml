@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "melee-character-studio"
+version = "0.1.0"
+description = "Make Super Smash Bros. Melee fighters from your own 3D models, for PascalPatch"
+requires-python = ">=3.10"
+license = "GPL-2.0-or-later"
+dependencies = []
+
+[project.scripts]
+melee-character-studio = "melee_character_studio.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "core/src"}
+
+[tool.setuptools.packages.find]
+where = ["core/src"]
+
+[tool.setuptools.package-data]
+melee_character_studio = ["web/*.html", "web/*.css", "web/*.js", "web/vendor/*", "web/vendor/addons/*"]

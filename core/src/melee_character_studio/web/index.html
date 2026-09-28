@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Character Studio</title>
+<link rel="stylesheet" href="pascal-ui.css">
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">{"imports": {"three": "./vendor/three.module.js"}}</script>
+</head>
+<body class="pp-root">
+<header id="topbar">
+  <div class="brand"><span class="pp-brand-mark">C</span> <span class="brand-name">Character<b>Studio</b></span> <span id="project-name" class="muted"></span></div>
+  <div class="filemenu">
+    <button id="file-btn" aria-haspopup="menu" aria-expanded="false" title="Projects: new, open, save as, close">File ▾</button>
+    <div id="file-menu" role="menu" hidden>
+      <button data-file="new" role="menuitem">New project… <span class="kbd">Ctrl+N</span></button>
+      <button data-file="open" role="menuitem">Open… <span class="kbd">Ctrl+O</span></button>
+      <div class="menu-label">Recent</div>
+      <div id="recent-list"></div>
+      <hr>
+      <button data-file="save" role="menuitem">Save <span class="kbd">Ctrl+S</span></button>
+      <button data-file="save_as" role="menuitem">Save as… <span class="kbd">Ctrl+Shift+S</span></button>
+      <button data-file="folder" role="menuitem">Show project folder path</button>
+      <hr>
+      <button data-file="roster" role="menuitem">Roster…</button>
+      <button data-file="close" role="menuitem">Close project</button>
+    </div>
+  </div>
+  <select id="mode-select" aria-label="Editor mode">
+    <option value="fit">1 · Fit</option><option value="paint">2 · Body parts</option><option value="sculpt">3 · Sculpt</option>
+    <option value="animate">4 · Animate</option><option value="moves">5 · Moves</option><option value="stats">6 · Stats</option><option value="export">7 · Build</option>
+  </select>
+  <nav id="modes">
+    <button data-mode="fit" data-key="1" title="1 — place joint landmarks on the imported model">Fit</button>
+    <button data-mode="paint" data-key="2" title="2 — paint which body part each area follows">Body parts</button>
+    <button data-mode="sculpt" data-key="3" title="3 — reshape the rigged model in the base bind pose">Sculpt</button>
+    <button data-mode="animate" data-key="4" title="4 — preview real Melee animations">Animate</button>
+    <button data-mode="moves" data-key="5" title="5 — moveset and hitbox tuning">Moves</button>
+    <button data-mode="stats" data-key="6" title="6 — fighter attributes">Stats</button>
+    <button data-mode="export" data-key="7" title="7 — build into PascalPatch and launch">Build</button>
+  </nav>
+  <div class="actions">
+    <button id="undo" title="Undo (Ctrl+Z)">↶</button>
+    <button id="redo" title="Redo (Ctrl+Y)">↷</button>
+    <button id="save" class="primary" title="Save project (Ctrl+S)">Save</button>
+  </div>
+</header>
+<main>
+  <section id="viewport-wrap">
+    <canvas id="viewport"></canvas>
+    <div id="brush-ring" hidden></div>
+    <div id="hud">
+      <span id="hud-mode"></span>
+      <span id="hud-hint" class="muted"></span>
+    </div>
+    <div id="view-tools">
+      <button data-view="front" title="Front view">Front</button>
+      <button data-view="side" title="Side view">Side</button>
+      <button data-view="frame" title="Frame model (F)">Frame</button>
+      <label><input type="checkbox" id="toggle-wire"> Wire</label>
+      <label><input type="checkbox" id="toggle-bones" checked> Bones</label>
+      <label><input type="checkbox" id="toggle-texture" checked> Texture</label>
+    </div>
+    <div id="timeline" hidden>
+      <button id="play" title="Play/pause (Space)">▶</button>
+      <input type="range" id="frame" min="0" max="0" value="0">
+      <span id="frame-label">0 / 0</span>
+      <select id="speed" title="Playback speed"><option value="0.25">¼× speed</option><option value="0.5">½× speed</option><option value="1" selected>1× speed</option><option value="2">2× speed</option></select>
+    </div>
+  </section>
+  <aside id="panel"></aside>
+</main>
+<footer id="status"><span id="status-text">Loading…</span><span id="status-right" class="muted"></span><span id="autosave-state" class="muted"></span></footer>
+<dialog class="pp-dialog" id="dialog"></dialog>
+<script type="module" src="app.js"></script>
+</body>
+</html>
