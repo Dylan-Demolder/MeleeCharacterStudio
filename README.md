@@ -1,207 +1,117 @@
 # Melee Character Studio
 
-Make your own Super Smash Bros. Melee fighters from 3D models, and play them offline in
+**Make your own Super Smash Bros. Melee fighters from 3D models**, and play them offline in
 [Melee Unlocked](https://github.com/hero88go/melee-unlocked) through
 [PascalPatch](https://github.com/Dylan-Demolder/PascalPatch).
 
-Bring a `.glb`, `.obj` or zipped `.gltf` and pick the Melee fighter whose skeleton and animations
-it builds on. The studio fits the model to that skeleton, then lets you retune moves, borrow
-specials from other fighters and change stats, with frame data and KO percents that update as
-you go. **Build & play** puts the character in the game.
+Bring a `.glb`, `.obj` or zipped `.gltf`, and pick the Melee fighter whose skeleton and
+animations it builds on. The studio fits your model to that skeleton. Then you can retune moves,
+borrow specials from other fighters and change stats, with frame data and KO percents that
+update as you go. **Test in game** builds the fighter and drops you straight into a match with
+it.
 
-Six original example characters come with it, ready to play or take apart: Glacier (Bowser),
-Sir Nova (Marth), Bolt-9 (Samus), Umbra (Mewtwo), Cinder (Ganondorf) and Chungus
-(Jigglypuff). See [`examples/`](examples/README.md).
+![Character Studio's start screen, with the six example characters](docs/images/studio-home.png)
+
+## Example characters
+
+Six original fighters come with the studio, ready to play or take apart. Each one is a new
+fighter on the character select screen, so no original fighter is replaced.
+
+| <img src="examples/glacier/portrait.png" width="96" alt="Glacier"> | <img src="examples/nova/portrait.png" width="96" alt="Sir Nova"> | <img src="examples/bolt9/portrait.png" width="96" alt="Bolt-9"> | <img src="examples/umbra/portrait.png" width="96" alt="Umbra"> | <img src="examples/cinder/portrait.png" width="96" alt="Cinder"> | <img src="examples/chungus/portrait.png" width="96" alt="Chungus"> |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| **Glacier**<br>Bowser | **Sir Nova**<br>Marth | **Bolt-9**<br>Samus | **Umbra**<br>Mewtwo | **Cinder**<br>Ganondorf | **Chungus**<br>Jigglypuff |
+| Ice golem: specials and smashes freeze | Star knight with an electric blade | Heavy, grounded storm robot | Shadow ninja with dark-element strikes | Fire demon: every special burns | Round bat with Fox's and Luigi's specials |
+
+To play them, open **Roster**, press **+ All examples**, then **Build & play**.
+[examples/](examples/README.md) has each character's moves, how they were made, and a testing
+checklist.
 
 ## Get it
 
-Character Studio comes with PascalPatch. Download PascalPatch from its
-[releases](https://github.com/Dylan-Demolder/PascalPatch/releases/latest), unzip it, run
-`pascalpatch.cmd`, make a profile with your Melee disc, then press **Character Studio**. You
-need nothing else installed.
+Character Studio comes in the PascalPatch download:
 
-1. On the start screen, open an example, or press **New project** and drop in a model.
-2. To play the examples, open **Roster**, press **+ All examples**, then **Build & play**.
+1. Download PascalPatch from its
+   [latest release](https://github.com/Dylan-Demolder/PascalPatch/releases/latest), unzip it,
+   and run **`PascalPatch.exe`**.
+2. In PascalPatch, make a profile with your Melee disc (NTSC 1.02 `.iso`).
+3. Press **Character Studio** at the top of the app.
 
-The studio reads the base fighters from your own Melee disc (NTSC 1.02) and writes what it builds
-to PascalPatch's folders. This repository contains no Nintendo game data. Custom characters are
-offline only: they would desync against other players online, so PascalPatch's online-safe
-profiles refuse them.
+Nothing else needs installing. The studio reads the base fighters from your own disc and writes
+what it builds to PascalPatch's folders.
 
-## The app
+## Make a character
 
-It opens in its own window: pywebview if installed, otherwise Edge or Chrome in app mode.
+1. **New project**: drop in your model. Pick a name, the base fighter, and which way the model
+   faces. The joints are placed automatically as a first guess.
+2. Work through the editor's modes (keys 1–7):
 
-- **Start screen:**
-  - recent projects, and the examples. Opening an example opens your own copy in the projects
-    folder; the original stays as it came;
-  - **New project** from a model: drop in a `.glb`, an `.obj`, or a `.zip` of a `.gltf` with its files. Pick a name, the base fighter whose skeleton and moves it uses, and which way the model faces. The joints are placed automatically as a first guess;
-  - **Open**, to browse to any project folder;
-  - **Roster**, to put characters together, then Build, or Build & play through PascalPatch (offline);
-  - **Settings**: your disc image, where projects go, and PascalPatch.
-- **Editor:**
-  - the modes: Fit, Body parts, Sculpt, Animate, Moves, Stats, Build;
-  - **Test in game** (in Build): builds, then starts the game straight in a match with the character, against the fighter and on the stage you pick, with no menus (PascalPatch's Quick Match plugin). Player 2 can be a Training Lab dummy or a CPU;
-  - **File** menu: New, Open, Recent, Save (Ctrl+S), Save as (Ctrl+Shift+S; copies the project to a new folder with its own id), Roster, Close;
-  - edits are autosaved to `<project>/.studio/autosave.json` a few seconds after each change. Reopening a project with newer autosaved edits offers to restore them.
+   | Mode | What you do |
+   |---|---|
+   | **Fit** | Drag the base skeleton's joints onto your model |
+   | **Body parts** | Paint which bone each area follows: fixes capes, hair and baggy clothes |
+   | **Sculpt** | Grab, smooth, inflate and deflate brushes, with X symmetry |
+   | **Animate** | Watch the base fighter's real animations on your model |
+   | **Moves** | Pick each special from any fighter, borrow normal attacks, retune hitboxes. Every move shows its frame data and the percent it KOs at |
+   | **Stats** | Attribute sliders, each compared with all 26 fighters, plus a survival table |
+   | **Build** | A check for problems and balance outliers, then the build |
 
-A project is a folder: `character.json`, `moveset.json`, `rig.json`, `model/model.gltf` and its textures. New projects go in `Documents/Character Studio` unless you pick another folder in Settings. Settings and the recent list are kept in `~/.melee-character-studio/config.json`. The roster is `roster.json` in the projects folder.
+3. **Test in game** (in Build): pick the opponent, the stage, and whether player 2 is a human,
+   a Training Lab dummy or a CPU. The game starts straight in that match.
+4. **Roster**: put several characters together, then **Build & play**.
+
+![The Roster page](docs/images/studio-roster.png)
+
+Edits autosave a few seconds after each change. **File > Save as** copies a project to a new
+folder. Undo and redo (Ctrl+Z / Ctrl+Y) cover every edit.
+
+### Where things live
+
+- **A project** is a folder: `character.json` (name, stats), `moveset.json` (move edits),
+  `rig.json` (the fit), and `model/` (your model and textures).
+- **New projects** go in `Documents/Character Studio`, unless you pick another folder in
+  Settings. The roster is `roster.json` in that folder.
+- **Settings and the recent list** are in `~/.melee-character-studio/config.json`. Base-fighter
+  files read from your disc are cached in `~/.melee-character-studio/cache`, never in a project.
+
+### Limits
+
+- Only the default costume gets your model. The other colour slots keep the vanilla look.
+- Projectiles (arrows, missiles, blasters) are items, so they keep their vanilla behaviour.
+- Characters use their base fighter's sounds and effects.
+- **Offline only.** Custom fighters would desync against other players, so PascalPatch's
+  online-safe profiles refuse them.
 
 ## From source
 
-With Python 3.10 or newer and no other packages:
+You need Python 3.10 or newer. No other packages are required.
 
 ```sh
-PYTHONPATH=core/src python -m melee_character_studio.cli app
+PYTHONPATH=core/src python -m melee_character_studio.cli app              # opens the studio
+PYTHONPATH=core/src python -m melee_character_studio.cli app --no-window  # or serve http://127.0.0.1:8766
+PYTHONPATH=core/src python -m unittest discover -s core/tests             # tests
 ```
 
-Pass `--no-window` to serve at <http://127.0.0.1:8766> instead. In PascalPatch's Settings, set
-the Character Studio folder to this checkout to use it from PascalPatch's button. Tests:
+To use a checkout from PascalPatch's **Character Studio** button, set the Character Studio
+folder in PascalPatch's Settings. `pip install -e .` also gives you a `melee-character-studio`
+command.
 
-```sh
-PYTHONPATH=core/src python -m unittest discover -s core/tests -v
-```
+| Folder | |
+|---|---|
+| `core/src/melee_character_studio/` | The studio server, HSD reader/writer, model kit and importer |
+| `core/src/melee_character_studio/web/` | The app's pages and the three.js editor |
+| `examples/` | The example characters (CC0) |
+| `schemas/` | JSON schemas for project files |
+| `docs/` | [Command line](docs/cli.md), [authoring guide](docs/authoring.md), [move sets](docs/movesets.md), [HSD validation](docs/hsd-validation.md) |
 
-## License
+Every step the app runs can also be run on its own from the command line: building characters
+and rosters, the model kit, inspecting skeletons, and converting HSD files. See
+[docs/cli.md](docs/cli.md).
+
+## Legal and license
+
+This repository contains no Nintendo game data. Bring your own NTSC 1.02 disc, and never commit
+ISOs or files read from it.
 
 Character Studio is free software under the GNU General Public License, version 2 or (at your
 option) any later version: see [LICENSE](LICENSE). The example characters in `examples/` are
 CC0-1.0. three.js (MIT) is vendored under `core/src/melee_character_studio/web/vendor`.
-
-## Command line
-
-The core CLI can validate a model or export a project:
-
-```sh
-PYTHONPATH=core/src python -m melee_character_studio.cli validate-model model.gltf
-PYTHONPATH=core/src python -m melee_character_studio.cli export project character.melee-character
-PYTHONPATH=core/src python -m melee_character_studio.cli validate-project project
-PYTHONPATH=core/src python -m melee_character_studio.cli edit-move project edited-project jab a
-PYTHONPATH=core/src python -m melee_character_studio.cli set-attribute project edited-project weight 90
-PYTHONPATH=core/src python -m melee_character_studio.cli gui project
-PYTHONPATH=core/src python -m melee_character_studio.cli preview-model model.gltf skeleton.svg
-PYTHONPATH=core/src python -m melee_character_studio.cli validate-library approved-moves.json
-PYTHONPATH=core/src python -m melee_character_studio.cli validate-calibration attributes.json
-```
-
-## Package-to-fighter HSD composition
-
-For an offline-gameplay `.melee-character` package and a user-owned base fighter archive, create a deterministic, loader-compatible HSD archive without modifying the source archive:
-
-```sh
-PYTHONPATH=core/src python -m melee_character_studio.cli compose-fighter-hsd \
-  nova.melee-character /path/to/PlFc.dat build/PlNova.dat
-```
-
-The command validates package checksums, preserves the base graph, and uses `serialize_hsd_graph` to allocate a package-specific `ftData<Id>` root plus metadata symbol. It does not read or write an ISO. To produce a modified ISO, hand the output to PascalPatch: the native-first path replaces data files inside a PascalPatch profile ISO and leaves the DOL untouched (the generated-DOL route is deferred to PascalPatch's Tier C recompiler fork); user game files stay outside this repository.
-
-## Importing a model as a playable character
-
-```sh
-PYTHONPATH=core/src python -m melee_character_studio.cli export examples/nova build/nova.melee-character
-PYTHONPATH=core/src python -m melee_character_studio.cli compose-fighter-slot build/nova.melee-character /path/to/PlMs.dat build/PlMs.dat
-PYTHONPATH=core/src python -m melee_character_studio.cli import-fighter-model examples/nova /path/to/PlMsNr.dat build/PlMsNr.dat
-```
-
-`compose-fighter-slot` writes attributes and retunes move hitboxes;
-`import-fighter-model` rigs the project's glTF onto the base skeleton and
-writes the default costume. PascalPatch installs both through a profile
-`characters` entry (`fighter_file` + `costume_file`). See
-`docs/authoring.md` for the pipeline and its limits.
-
-## Model kit, roster builds and skeleton inspection
-
-```sh
-PYTHONPATH=core/src python -m melee_character_studio.cli generate-model examples/glacier
-PYTHONPATH=core/src python -m melee_character_studio.cli inspect-skeleton donkey-kong --iso /path/to/GALE01.iso
-PYTHONPATH=core/src python -m melee_character_studio.cli build-character examples/glacier --iso /path/to/GALE01.iso --out build/glacier
-PYTHONPATH=core/src python -m melee_character_studio.cli build-roster examples/roster.json --iso /path/to/GALE01.iso \
-  --out build/roster --profile /path/to/pascalpatch-data/profiles/examples.json
-```
-
-- `generate-model` builds a project's `model.json` spec into an original low-poly glTF with a texture atlas. The spec is primitives attached to rig landmarks (capsules, cylinders, cones, spheres, boxes, extrusions, mirrored parts, pixel-art decals). It also writes a four-view `preview.png` and updates `rig.json` (landmarks and per-segment vertex ranges).
-- `inspect-skeleton` prints the part→joint map and body segments that the importer derives from the fighter's own skeleton and `PlCo.dat`.
-- `build-character` runs the full export: package, borrowed moves, fighter data, then costume.
-- `build-roster` runs `build-character` for every project in a roster and writes a PascalPatch offline profile.
-
-`character.json` may use `attribute_scales` (multipliers of the base fighter's values) as well as absolute `attributes`. See `examples/README.md` for the example characters and their testing checklist.
-
-## 3D editor
-
-Character Studio's editor is a local web app: Python serves the project and
-does every file operation, and a three.js viewport in the browser does the
-rendering and interaction. No extra Python packages are needed; three.js
-(MIT) is vendored under `core/src/melee_character_studio/web/vendor`.
-
-```sh
-PYTHONPATH=core/src python -m melee_character_studio.cli studio examples/nova   --iso /path/to/GALE01.iso   --pascalpatch-repo /path/to/PascalPatch --pascalpatch-root /path/to/pascalpatch-data   --port /path/to/melee_port.exe --port-cwd /path/to/melee-unlocked
-```
-
-The ISO and PascalPatch paths are remembered in
-`~/.melee-character-studio/config.json`; base-fighter files are read from
-your disc into `~/.melee-character-studio/cache`, never into the project.
-
-| Mode | What it does |
-|---|---|
-| Fit | Drag the base skeleton's joints onto your model in its own pose (gizmo, X-ray, snap to limb centre, per-part size) |
-| Body parts | Paint which bone each area follows; fixes baggy clothes, hair and capes that the automatic nearest-bone pass gets wrong |
-| Sculpt | Grab / smooth / inflate / deflate brushes with X symmetry, stored as bind-space offsets on top of the fit |
-| Animate | Play the base fighter's real animations on the rig (baked with a port of the game's FObj interpreter), with per-part weight heat maps |
-| Moves | Pick each special (B) from any fighter via dropdowns (run by PascalPatch's move-graft plugin), borrow normal attacks, and retune hitboxes with a before/after table. Every move shows its frame data (startup, active frames, when you can act, landing lag and auto-cancel windows) an on-shield estimate, and the percent it KOs Fox, Marth, Peach and Bowser from the centre of Final Destination, all following your tuning |
-| Stats | Grouped attribute sliders (movement, air, body, landing lag) against the base fighter's values, each with a strip showing where it sits among all 26 fighters, and a Survival table: the percent Melee's signature kill moves KO your character at, against the whole cast |
-| Build | A Check first: problems that would stop a build, stats or moves beyond anything in Melee (faster than every jab, heavier than Bowser, safer on shield than any smash, KOs earlier than any forward smash, outlives Bowser), and every normal attack ranked against the cast. Then build fighter data + animations + costume, build a PascalPatch offline profile, launch melee-unlocked with Slippi disabled |
-
-Every choice is a dropdown, and in narrow windows the panel stacks under the viewport and the modes become a dropdown. Keys 1–7 switch modes. Undo/redo (Ctrl+Z / Ctrl+Y) covers every edit; Ctrl+S saves `character.json`,
-`moveset.json` and `rig.json`. The earlier Tk and Qt desktop editors were
-retired; `gui`/`qt-gui` now point here.
-
-## Base-fighter roster
-
-Character Setup includes metadata for the 26 Melee base fighters. Each entry
-records a stable ID, display name, compatible skeleton mode, and authoring
-notes. The roster is a schema/editor aid only: this project does not ship
-Nintendo models, textures, animations, sounds, extracted archives, or game
-files. Authors must provide original assets and the Studio will validate them.
-
-## Melee decomp integration
-
-The local source reference is the official decompilation project:
-
-```text
-https://github.com/doldecomp/melee
-```
-
-Its user-provided `orig/GALE01/files/PlXX.dat` and `PlXXAJ.dat` files can be
-discovered and staged with the `discover-assets` and `stage-assets` commands.
-The HSD converter decodes local fighter geometry, animation,
-materials, and common texture formats. Costume archives are layered over their
-shared base position streams; the exact GX TEV/lighting state remains a
-separate renderer task.
-
-Local HSD conversion is available for user-owned decomp/ISO assets:
-
-```sh
-PYTHONPATH=core/src python -m melee_character_studio.cli convert-hsd \
-  /path/to/orig/GALE01/files/PlFc.dat /tmp/falco.gltf
-
-# Include one real FigaTree action (clip 3 in this example)
-PYTHONPATH=core/src python -m melee_character_studio.cli convert-hsd \
-  /path/to/orig/GALE01/files/PlFc.dat /tmp/falco-walk.gltf \
-  --animation-source /path/to/orig/GALE01/files/PlFcAJ.dat --clip 3
-```
-
-The converter exports decoded mesh parts, a joint skin, inverse bind matrices,
-and an optional sampled HSD animation clip. HSD animation clips are also loaded
-directly from the concatenated `PlFcAJ.dat` source by the editor's Animate mode.
-HSD diffuse materials and common local image formats are decoded. To layer a
-costume, pass `--texture-source /path/to/PlFcNr.dat` with `PlFc.dat` as the
-model source. The exporter writes TEXCOORD_0, separate material primitives,
-and embedded PNG images. Generated UV,
-full TEV composition, and writing a playable Melee fighter back into runtime
-HSD remain validation gates before game export.
-
-## Packaging
-
-`pyproject.toml` is dependency-free; `pip install -e .` provides the
-`melee-character-studio` command, and the web editor's assets ship as package
-data.
