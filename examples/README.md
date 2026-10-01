@@ -1,35 +1,113 @@
 # Example characters
 
-Six original fighters made with Character Studio, each built on a vanilla
-fighter's skeleton, animations and moves. In the game they are new fighters on
-the character select screen; no original fighter is replaced. They come with the studio: its start screen lists them under
-**Examples**, and the Roster page can add them all at once, ready for **Build &
-play**. Every one has an original low-poly model built by the model kit
-(`model.json` → `model/model.gltf`), a move set that retunes the base fighter's
-hitboxes, and stat changes. Nothing in this folder comes from the game disc; the
-base fighters' files are read from your own ISO at build time and written only to
-your output folder. The project files are CC0-1.0: copy them, change them, share
-what you make.
+Six original fighters made with Character Studio. Each is built on a vanilla fighter's skeleton,
+animations and moves, and appears as a **new fighter** on the character select screen, so no
+original fighter is replaced.
 
-| Character | Built on (file) | Idea | Highlights |
-|---|---|---|---|
-| Glacier | Bowser (`PlKp`) | Ice golem | Ice element on specials and smashes; heavier than Bowser |
-| Sir Nova | Marth (`PlMs`) | Star knight | Electric starlight blade; floatier jumps |
-| Bolt-9 | Samus (`PlSs`) | Storm robot | Electric up special, smashes and kicks; heavier, less floaty; cannon on the right arm |
-| Umbra | Mewtwo (`PlMt`) | Shadow ninja | Dark element strikes; faster on the ground; teleport recovery kept |
-| Cinder | Ganondorf (`PlGn`) | Fire-demon warlord | Fire on every special, forward smash and forward air |
-| Chungus | Jigglypuff (`PlPr`) | Round purple bat | Jigglypuff's air game; Fox's Firefox and Illusion and Luigi's Cyclone as specials (move-graft); wings flap with the arm animations |
+Every one has an original low-poly model made with the model kit, a move set that retunes the
+base fighter's hitboxes, and stat changes. Nothing here comes from the game disc. The project
+files are CC0-1.0: copy them, change them, and share what you make.
 
-To make your own from one of them, open it and use **File → Save as**, or copy
-the folder, pick an unused base fighter in `rig.json`/`moveset.json` (`base_fighter`), edit
-`model.json`, and list it in `roster.json`. A roster has one character per base fighter.
+![The six example characters with their skeletons](../docs/images/rig-examples.png)
 
-Each project's `character.json` has a `description` and `features` list; the
-full move list is in `moveset.json`. `model/preview.png` shows front, left,
-back and three-quarter views, with the rig landmarks marked in the second row.
+**To play them:** in the studio, open **Roster**, press **+ All examples**, then
+**Build & play**. **To see how one is made:** click it under **Examples** on the start screen.
+That opens your own copy, and the original stays as it came.
 
-`ember/` is older and smaller: a `.melee-character` package example (stats and
-moves only, no model) for the command-line tools.
+## Glacier
+
+<img src="glacier/portrait.png" width="96" align="left" alt="Glacier portrait">
+
+Built on Bowser (`PlKp`). An ice golem on Bowser's frame whose specials and smashes freeze foes solid.
+
+- Ice element on every special and on the forward and down smashes: hits can freeze
+- Even heavier than Bowser (x1.05)
+- Crystal spikes along the back
+
+<br clear="left">
+
+<img src="glacier/model/preview.png" width="480" alt="Glacier from the front, side, back and three-quarter view, with rig landmarks in the second row">
+
+## Sir Nova
+
+<img src="nova/portrait.png" width="96" align="left" alt="Sir Nova portrait">
+
+Built on Marth (`PlMs`). A star knight on Marth's frame whose starlight blade crackles with electricity.
+
+- Starlight: electric element on specials, forward smash and down air
+- Higher, floatier jumps than Marth
+- Starfall Slash deals 10% more damage
+
+<br clear="left">
+
+<img src="nova/model/preview.png" width="480" alt="Sir Nova from the front, side, back and three-quarter view, with rig landmarks in the second row">
+
+## Bolt-9
+
+<img src="bolt9/portrait.png" width="96" align="left" alt="Bolt-9 portrait">
+
+Built on Samus (`PlSs`). A storm-powered robot on Samus's frame. Heavy, grounded and electric.
+
+- Electric element on the up special, smashes and aerial kicks
+- Heavier (x1.1) and less floaty than Samus
+- Arm cannon on the right forearm where Samus's cannon is
+
+<br clear="left">
+
+<img src="bolt9/model/preview.png" width="480" alt="Bolt-9 from the front, side, back and three-quarter view, with rig landmarks in the second row">
+
+## Umbra
+
+<img src="umbra/portrait.png" width="96" align="left" alt="Umbra portrait">
+
+Built on Mewtwo (`PlMt`). A shadow ninja on Mewtwo's frame: teleporting shadow steps and dark-element strikes.
+
+- Dark element on side special, forward and up smash and back air
+- Faster on the ground and less floaty than Mewtwo
+- Shadow Step keeps Mewtwo's teleport recovery
+
+<br clear="left">
+
+<img src="umbra/model/preview.png" width="480" alt="Umbra from the front, side, back and three-quarter view, with rig landmarks in the second row">
+
+## Cinder
+
+<img src="cinder/portrait.png" width="96" align="left" alt="Cinder portrait">
+
+Built on Ganondorf (`PlGn`). A fire-demon warlord on Ganondorf's frame: every special burns.
+
+- Fire element on every special, forward smash and forward air
+- A touch faster on the ground than Ganondorf
+- Inferno Punch deals 10% more damage
+
+<br clear="left">
+
+<img src="cinder/model/preview.png" width="480" alt="Cinder from the front, side, back and three-quarter view, with rig landmarks in the second row">
+
+## Chungus
+
+<img src="chungus/portrait.png" width="96" align="left" alt="Chungus portrait">
+
+Built on Jigglypuff (`PlPr`). A round purple bat built on Jigglypuff: Jigglypuff's size, weight and air game, with Fox's up and side specials and Luigi's down special.
+
+- Plays like Jigglypuff: same size, weight, jumps and air speed
+- Night Flare (up B) is Fox's Firefox and Blaze Dash (side B) is Fox's Illusion
+- Wing Cyclone (down B) is Luigi's Cyclone
+- Echo Dive (neutral B) is Jigglypuff's Rollout with a dark-element hit
+- Borrowed specials run through PascalPatch's move-graft plugin (offline)
+
+<br clear="left">
+
+<img src="chungus/model/preview.png" width="480" alt="Chungus from the front, side, back and three-quarter view, with rig landmarks in the second row">
+
+## Make your own from one
+
+Open it and use **File > Save as**. Or copy the folder by hand: pick an unused base fighter
+(`base_fighter` in `rig.json` and `moveset.json`), edit `model.json`, and list the folder in
+`roster.json`. A roster has one character per base fighter.
+
+`ember/` is an older, smaller example: a `.melee-character` package (stats and moves only, no
+model) for the command-line tools.
 
 ## Project layout
 
@@ -46,7 +124,7 @@ moves only, no model) for the command-line tools.
 = 5 % heavier than Bowser), so the characters stay relative to whatever
 the disc says. `attributes` sets absolute values; a key can't be in both.
 
-## Building
+## Building from the command line
 
 Run all commands from the `MeleeCharacterStudio` checkout with
 `PYTHONPATH=core/src` (or install it with `pip install -e .` and use
@@ -95,31 +173,9 @@ The profile is `mode: offline`, so launching needs `--allow-unsafe`. Custom char
 
 ## Testing checklist
 
-All of them have been built from a GALE01 v1.02 disc and played in offline VS
-matches on melee-unlocked (`--no-slippi`). That pass found and fixed:
-
-- **Part numbering.** The decomp's `Fighter_Part` enum is one entry short
-  after `RFootJ`, so every derived arm was shifted by a joint. Fox failed
-  outright with "no pelvis". `base_skeleton.PART_NAMES` now matches the disc,
-  which was checked against bind positions for all 26 kinds.
-- **Ganondorf's head.** His parts table leaves NeckN/HeadN unmapped, so the
-  head is now found from the bind pose.
-- **Jigglypuff and Samus.** Jigglypuff's legs start at the centre of the body,
-  so the torso side axis is taken from the knees. Parts a skeleton lacks
-  (Jigglypuff's hands, Samus's right hand) fold into their parent for
-  `segment_modes`, painted overrides and ranges.
-- **Texture animations.** Eyes and mouths address TObjs by their index across
-  all DObjs. DK's and Mewtwo's host DObj had two TObjs and the costume wrote
-  one, which crashed the game with `can't find fighter texture anim!`. The host
-  now keeps its TObj count; the extra TObjs point at a black image.
-- **Air specials.** Moves whose script is only a `goto` into the ground script
-  count as tuned by the ground entry, so they don't warn.
-
-The warnings still left in `roster-report.json` are specials whose hitboxes
-come from fighter code or items: Fox's Illusion, Bowser's Fire Breath and
-Mewtwo's Confusion.
-
-To re-check after changes:
+All six have been built from a GALE01 v1.02 disc and played in offline VS matches. The bugs
+that pass found are listed in [docs/authoring.md](../docs/authoring.md#validated-on-a-disc). To
+re-check after changes:
 
 1. Run `inspect-skeleton <slot> --iso …` for each slot and check that the parts include pelvis, chest, head, both arms and both legs. Jigglypuff is the one to watch, because Chungus needs both thighs and a chest.
 2. Run `build-roster` and read the warnings in `roster-report.json`:

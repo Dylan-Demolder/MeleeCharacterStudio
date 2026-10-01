@@ -361,9 +361,9 @@ vanilla Falcon Kick dealt 12% and did not. The character replaces Captain Falcon
 - The CMPR encoder uses principal-axis endpoints plus a least-squares refit
   (44 dB PSNR on a 512x512 character texture).
 
-## Any-slot imports, model kit and roster builds (not yet disc-validated)
+## Any-slot imports, model kit and roster builds
 
-These extend the Captain Falcon route to every slot. The unit tests use synthetic archives only. Real-disc validation is the checklist in `examples/README.md`.
+These extend the Captain Falcon route to every slot. The unit tests use synthetic archives only. Real-disc validation is below, and the checklist in `examples/README.md`.
 
 - **Derived skeleton map.** `base_skeleton.py` reads the fighter's joint tree together with `PlCo.dat`:
   - `pData[4]`, the per-fighter `ftPartsTable`
@@ -394,3 +394,29 @@ These extend the Captain Falcon route to every slot. The unit tests use syntheti
   4. `PlXxNr.dat`
 
   It rejects two projects on one slot, keeps building after a failure, and writes `roster-report.json` plus a PascalPatch `mode: offline` profile. The studio's Export button uses the same `build_character`.
+
+### Validated on a disc
+
+All six example characters were built from a GALE01 v1.02 disc and played in offline VS
+matches on melee-unlocked (`--no-slippi`). That pass found and fixed:
+
+- **Part numbering.** The decomp's `Fighter_Part` enum is one entry short
+  after `RFootJ`, so every derived arm was shifted by a joint. Fox failed
+  outright with "no pelvis". `base_skeleton.PART_NAMES` now matches the disc,
+  which was checked against bind positions for all 26 kinds.
+- **Ganondorf's head.** His parts table leaves NeckN/HeadN unmapped, so the
+  head is now found from the bind pose.
+- **Jigglypuff and Samus.** Jigglypuff's legs start at the centre of the body,
+  so the torso side axis is taken from the knees. Parts a skeleton lacks
+  (Jigglypuff's hands, Samus's right hand) fold into their parent for
+  `segment_modes`, painted overrides and ranges.
+- **Texture animations.** Eyes and mouths address TObjs by their index across
+  all DObjs. DK's and Mewtwo's host DObj had two TObjs and the costume wrote
+  one, which crashed the game with `can't find fighter texture anim!`. The host
+  now keeps its TObj count; the extra TObjs point at a black image.
+- **Air specials.** Moves whose script is only a `goto` into the ground script
+  count as tuned by the ground entry, so they don't warn.
+
+The warnings still left in `roster-report.json` are specials whose hitboxes
+come from fighter code or items: Fox's Illusion, Bowser's Fire Breath and
+Mewtwo's Confusion.
