@@ -55,6 +55,12 @@ what it builds to PascalPatch's folders.
    | **Stats** | Attribute sliders, each compared with all 26 fighters, plus a survival table |
    | **Build** | A check for problems and balance outliers, then the build |
 
+   ![Glacier's model with its skeleton, and the body segment each part follows](docs/images/rig-glacier.png)
+
+   *Glacier's fit: the joints (white down the middle, red on the character's right, blue on its left)
+   and bones the model is bound to, and the body segment each part of the mesh follows. Drawn
+   from the project's `rig.json` and `model/model.gltf`.*
+
 3. **Test in game** (in Build): pick the opponent, the stage, and whether player 2 is a human,
    a Training Lab dummy or a CPU. The game starts straight in that match.
 4. **Roster**: put several characters together, then **Build & play**.

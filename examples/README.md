@@ -8,6 +8,8 @@ Every one has an original low-poly model made with the model kit, a move set tha
 base fighter's hitboxes, and stat changes. Nothing here comes from the game disc. The project
 files are CC0-1.0: copy them, change them, and share what you make.
 
+![The six example characters with their skeletons](../docs/images/rig-examples.png)
+
 **To play them:** in the studio, open **Roster**, press **+ All examples**, then
 **Build & play**. **To see how one is made:** click it under **Examples** on the start screen.
 That opens your own copy, and the original stays as it came.
